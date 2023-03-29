@@ -14,6 +14,21 @@ input[type=time]::-webkit-calendar-picker-indicator {
   display: none;
 }
 
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128,0,0,0.6);
+  }
+  .image {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-image: url("./background/UChicago_Aerial-Mansueto.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
 .fullpage {
     position: relative;
     height: 100vh;
@@ -28,7 +43,6 @@ input[type=time]::-webkit-calendar-picker-indicator {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: maroon;
     font-family: inhert;
   }
   
@@ -48,9 +62,19 @@ input[type=time]::-webkit-calendar-picker-indicator {
     z-index: 1;
   }
 
+  .scroll {
+    background-color:  white;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+  }
+
   .su .sub {
     border: 1px solid #FFFFFF;
     background-color: transparent;
+    transition: background-color 0.3s ease;
     width: 60rem;
     height: 3.5rem;
     color: white;
@@ -131,10 +155,6 @@ input[type=time]::-webkit-calendar-picker-indicator {
     color: white;
   }
   
-  body {
-    background-image: url("paper.gif");
-  }
-
   button {
     margin-left: 1rem;
     background-color: white;
