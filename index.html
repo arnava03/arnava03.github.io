@@ -1,59 +1,70 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Room Rovers</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  </head>
-  <body>
-    <div class="image">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RoomScouter</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top" id = "navbar" style="display: none;">
+        <div class="container-fluid">
+            <div class="logo">
+                <img src="css/logo/white_logo.png">
+            </div>
+        </div>
+    </nav>
+    <div class="img-container">
+        <img src="css/background/UChicago_Aerial-Mansueto.jpg">
         <div class="overlay">
-        <div class="fullpage">
-        <div class="text-container">
-            <form class="input-form" id="form" name="myForm" method="post" action = "process.php">
-                <div class="form-row-1">
-                    <h1 id="typing-text">I want to find an empty room on</h1>
-                    <div class="fade-in">
-                        <label for="date-input"></label>
-                        <input type="date" class="form-control" name="date" id="myDate" required>
-                    </div>
-                    <h1 id="typing-text-1">at</h1>
+            <div class="container">
+                <div class="type1" id="type1">
+                    <h1>I want to find an empty room near the building</h1>
                 </div>
-                <div class="form-row-2">
-                    <div class="fade-in-1">
-                        <label for="time-input"></label>
-                        <input type="time" class="form-control" name="time" id="myTime" required>
-                    </div>
-                    <h1 id="typing-text-2">and near this</h1>
-                    <div class="fade-in-2">
-                        <label for="place-select"></label>
+                <form class="input-form" id="form" name="myForm" action="process.php" method="post" >
+                    <div class="fade-in">
                         <select class="form-control" name="place" id="myPlace" required>
-                            <option class="selector" value="">building</option>
-                            <option class="selector" value="Cobb Hall">Cobb Hall</option>
-                            <option value="Harper Mem Library">Harper Mem Library</option>
+                            <option class="selector" value="">(Choose Building)</option>
+                            <option value="Harper Mem Library">Harper Library</option>
+                            <option value="Cobb Hall">Cobb Hall</option>
                             <option value="Rosenwald Hall">Rosenwald Hall</option>
                             <option value="Hutchinson Commons">Hutchinson Commons</option>
                             <option value="Regenstein Library">Regenstein Library</option>
                             <option value="Logan Center">Logan Center</option>
-                            <option value="Campus North Res Commons">Campus North Res Commons</option>
+                            <option value="Campus North Res Commons">Campus North</option>
                         </select> 
                     </div>
-                </div>
-                <div class="su">
-                    <button type="submit" onclick="scrollDown()" class="sub" id="myBtn">Check Availability</button>
-                </div>
-            </form>
-        </div>
-        </div>
-    </div>
-    <div class="scroll">
+                    <div class="type2">
+                        <h1>at</h1>
+                    </div>   
+                    <div class="fade-in-1">
+                        <input type="time" class="form-control" name="time" id="myTime" required>
+                    </div>
+                    <div class="type3">
+                        <h1>on</h1>
+                    </div>   
+                    <div class="fade-in-2">
+                        <label for="date-input"></label>
+                        <input type="date" class="form-control" name="date" id="myDate" required>
+                    </div>
+                    <div class="type4">
+                        <h1>.</h1>
+                    </div> 
+                    <div class="btn">
+                        <input type="submit" onClick="scrollDown()" class="sub" id="myBtn" value="Scout Available Rooms">
+                    </div>
+                </form>     
+            </div>  
+        </div>  
+    </div>   
+    <div class = "middle" id="middle" style="display:none">
 
     </div>
-​    
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script src="form.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
 </html>

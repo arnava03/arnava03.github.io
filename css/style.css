@@ -1,187 +1,134 @@
-@font-face {
-    font-family: monospace;
-    src: url("./font/Monospace.ttf") format("truetype");
-  }
-
 body {
-    font-family: monospace;
-    background-image: url("./background/UChicago_Aerial-Mansueto.jpg");
-
-}
-  
-input[type=date]::-webkit-calendar-picker-indicator,
-input[type=time]::-webkit-calendar-picker-indicator {
-  display: none;
-}
-
-.overlay {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(128,0,0,0.6);
-  }
-  .image {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    background-image: url("./background/UChicago_Aerial-Mansueto.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-.fullpage {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: white;
-    min-height: 500px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: inhert;
-  }
-  
-  #textcontainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: maroon;
-    opacity: 0.9;
-    min-height: 500px;
-    font-family: inhert;
-    z-index: 1;
-  }
-
-  .scroll {
-    background-color:  white;
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-  }
-
-  .su .sub {
-    border: 1px solid #FFFFFF;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-    width: 60rem;
-    height: 3.5rem;
-    color: white;
-    font-size: 26px;
-    letter-spacing: 2px;
-    font-family: inhert;
-    display: block;
-    margin-top: 5rem;
-    opacity: 0;
-    animation: fade-in-2 0.5s ease-in-out 4.3s forwards;
-  }
-
-  .su .sub:hover {
-    background-color: white;
-    color: maroon;
-  }
-
-  .selector{
-    color: #fff;
-    background: #bc0000;
-  }
-  
-  .centered {
     text-align: center;
-    color: white;
+}
+
+.navbar {
+    position: fixed;
+    background-color: #510400;
+    height:50px;
+    width: 100%;
+    top: -75px;
+    z-index: 9999;
+    transition: top 0.5s;
+    
+  }
+  
+.logo {
+    display: flex;
+    width: 100%;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.navbar img {
+    width: 15em;
   }
 
-  .input-form .form-control {
-    border: none;
-    border-radius: 0;
-    border-bottom: 2px solid white;
-    background-color: transparent;
-    color: white;
-    font-size: 35px;
-    letter-spacing: 2px;
-    margin-top: -1.4rem;
-    font-family: inhert;
-  }
-
-  .input-form .form-control:focus {
-    box-shadow: none;
-    outline: none;
-    background-color: transparent;
-    color: white;
-  }
-
-  .form-row-1 > * {
+.input-form-2 > *  {
     display: inline-block;
     vertical-align: middle;
+    letter-spacing: .1em;
+    font-family : "Courier New", monospace;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
   }
 
-  .form-row-2 > * {
+.img-container{
+    position:relative;
+    display:inline-block;
+    height:100vh;
+  }
+
+img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+  }
+
+.img-container .overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgb(128,0,0,0.7);
+  }
+
+.container {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    z-index: 1;
+    margin: 0 auto;
+  }
+
+  .type1 {
+    padding-top: 20%;
+  }
+
+  .type1 h1 { 
+    text-align: center;
+    font-family : "Courier New", monospace;
+    font-size: 30px;
+    color: white;
+    border-right: .15em solid transparent; /* The typwriter cursor */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: .1em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end 4.5,
+      wrap 0.1s 3.5s forwards;
+  }
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
+@keyframes wrap {
+    to {
+      white-space: normal;
+    }
+  }
+
+.input-form > * {
     display: inline-block;
     vertical-align: middle;
+    letter-spacing: .1em;
+    font-family : "Courier New", monospace;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3%;
+    margin: 0 auto;
   }
 
-  .form-control {
-      text-align: center;
-  }
-  
-  h1 {
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    margin-right: 1rem;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: none;
-    background-color: transparent;
-    color: white;
-  }
-  
-  button {
-    margin-left: 1rem;
-    background-color: white;
-    color: maroon;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-  }
+.form-control {
+    text-align: center;
+}
 
   .fade-in {
     opacity: 0;
-    animation: fade-in 0.5s ease-in-out 2s forwards;
+    animation: fade-in 0.5s ease-in-out 3.5s forwards;
   }
 
-  .fade-in-1 {
-    opacity: 0;
-    animation: fade-in 0.5s ease-in-out 2.8s forwards;
-  }
-  
-  .fade-in-2 {
-    opacity: 0;
-    animation: fade-in 0.5s ease-in-out 3.7s forwards;
-  }
-  
   @keyframes fade-in {
     from {
-      transform: translateX(-5%);
+      transform: width(0%);
       opacity: 0;
     }
     to {
@@ -189,7 +136,125 @@ input[type=time]::-webkit-calendar-picker-indicator {
       opacity: 1;
     }
   }
+
+.input-form .form-control {
+    border: none;
+    color: white;
+    font-size: 30px;
+    border-radius: 0;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+  }
+
+.input-form .form-control:focus {
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+  }
   
+  input[type=date]::-webkit-calendar-picker-indicator,
+  input[type=time]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+
+  .type2 {
+      padding-left: 1%;
+      padding-right: 1%;
+  }
+
+  .type2 h1 {
+    font-size: 30px;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid transparent; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .1em; /* Adjust as needed */
+    opacity: 0;
+    animation: 
+      typing 0.5s steps(2, end),
+      blink-caret .75s step-end 1,
+      slidein 1s ease 3.5s forwards;
+    animation-delay: 3.75s;
+  }
+
+  @keyframes slidein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .fade-in-1 {
+    opacity: 0;
+    animation: fade-in 0.5s ease-in-out 4.5s forwards;
+  }
+
+  .type3 {
+    padding-left: 1%;
+    padding-right: 1%;
+    }
+
+  .type3 h1 {
+    font-size: 30px;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid transparent; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .1em; /* Adjust as needed */
+    opacity: 0;
+    animation: 
+      typing 0.5s steps(2, end),
+      blink-caret .75s step-end 1,
+      slidein 1s ease 3.5s forwards;
+    animation-delay: 4.75s;
+  }
+
+  .fade-in-2 {
+    opacity: 0;
+    animation: fade-in 0.5s ease-in-out 5.5s forwards;
+    margin-top: -1.5em;
+  }
+  
+  .type4 {
+    padding-left: 1%;
+}
+
+  .type4 h1 {
+    font-size: 30px;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid white; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .1em; /* Adjust as needed */
+    opacity: 0;
+    animation: 
+      typing 0.5s steps(1, end),
+      blink-caret .75s step-end infinite,
+      slidein 1s ease 3.5s forwards;
+    animation-delay: 5.5s;
+  }
+
+  .btn {
+    width: 70%;
+    margin-top: 8%;
+  }
+  .btn .sub {
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    height: 100%;
+    color: white;
+    font-size: 30px;
+    letter-spacing: .1em;
+    
+    opacity: 0;
+    animation: fade-in-2 0.5s ease-in-out 6s forwards;
+  }
+
   @keyframes fade-in-2 {
     from {
       transform: translateY(5%);
@@ -201,8 +266,11 @@ input[type=time]::-webkit-calendar-picker-indicator {
     }
   }
 
-  
-  
+  .btn .sub:hover {
+    background-color: white;
+    color: maroon;
+  }
 
-  
-  
+  .middle {
+      height: 100vh;
+  }

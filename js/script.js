@@ -9,34 +9,26 @@ const currentDate = new Date();
 dateInput.value = currentDate.toISOString().slice(0,10);
 timeInput.value = currentDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 
-function animateTyping(id, duration, delay) {
-    const text = document.getElementById(id).textContent;
-    document.getElementById(id).textContent = "";
-    const delayInMillis = delay * 1000;
-    const durationInMillis = duration * 1000;
-    const characters = text.split("");
-    const characterCount = characters.length;
-    const delayBetweenCharacters = durationInMillis / characterCount;
-  
-    setTimeout(() => {
-      let i = 0;
-      const interval = setInterval(() => {
-        document.getElementById(id).textContent += characters[i];
-        i++;
-        if (i >= characterCount) {
-          clearInterval(interval);
-        }
-      }, delayBetweenCharacters);
-    }, delayInMillis);
+function scrollDown() {
+    var e = document.getElementById("middle");
+    e.style.display = "block";
+    e.scrollIntoView({
+        block: 'start',
+        behavior: 'smooth',
+        inline: 'start'
+      });
+      document.getElementById("navbar").style.display = "block";
   }
 
-  animateTyping("typing-text", 2, 0);
-  animateTyping("typing-text-1", 0.3, 2.5);
-  animateTyping("typing-text-2", 0.5, 3.2);
 
-  function scrollDown() {
-    window.scrollTo({
-      top: 500,
-      behavior: "smooth"
-    });
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos < currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    }
+    else { 
+        document.getElementById("navbar").style.top = "-75px";
+    }
+    prevScrollpos = currentScrollPos;
   }
