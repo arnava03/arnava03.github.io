@@ -36,19 +36,21 @@ function scrollDown() {
   $(document).ready(function() {
     $('#form').on('submit', function(e) {
       e.preventDefault(); // Prevent form submission
-      $.post(
-        'process.php', {
-          place: $("#myPlace").val(),
-          time: $("#myTime").val(),
-          date: $("#myDate").val()
+      $.ajax({
+        method: "POST",
+        url: "process.php",
+        data: {
+            place: $("#myPlace").val(),
+            time: $("#myTime").val(),
+            date: $("#myDate").val()
         },
-        function(data) {
-            // Handle success case
-            $("#success").html("<div>" + data + "</div>");
+        success: function(status) {
+            $('#data-container').html('success');
+        }, 
+        error: function(xhr, status, error) {
+            $('#data-container').html('failure');
+            console.log(error);
         }
-        ).fail(function(jqXHR, textStatus, errorThrown) {
-            // Handle error case
-            $("#failure").html("<div>AJAX Error: " + textStatus + " : " + errorThrown + "</div>");
         });
     });
   });
