@@ -32,3 +32,23 @@ function scrollDown() {
     }
     prevScrollpos = currentScrollPos;
   }
+
+  $(document).ready(function() {
+    $('#form').on('submit', function(e) {
+      e.preventDefault(); // Prevent form submission
+      $.post(
+        'process.php', {
+          place: $("#myPlace").val(),
+          time: $("#myTime").val(),
+          date: $("#myDate").val()
+        },
+        function(data) {
+            // Handle success case
+            $("#success").html("<div>" + data + "</div>");
+        }
+        ).fail(function(jqXHR, textStatus, errorThrown) {
+            // Handle error case
+            $("#failure").html("<div>AJAX Error: " + textStatus + " : " + errorThrown + "</div>");
+        });
+    });
+  });

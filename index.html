@@ -23,7 +23,7 @@
                 <div class="type1" id="type1">
                     <h1>I want to find an empty room near the building</h1>
                 </div>
-                <form class="input-form" id="form" name="myForm" action="process.php" method="post" >
+                <form class="input-form" id="form" name="myForm" method="post" action="">
                     <div class="fade-in">
                         <select class="form-control" name="place" id="myPlace" required>
                             <option class="selector" value="">(Choose Building)</option>
@@ -53,18 +53,18 @@
                         <h1>.</h1>
                     </div> 
                     <div class="btn">
-                        <input type="submit" onClick="scrollDown()" class="sub" id="myBtn" value="Scout Available Rooms">
+                        <button id="myBtn" onClick="showClasses();" class="sub">Scout Available Rooms</button>
                     </div>
                 </form>     
             </div>  
         </div>  
     </div>   
-    <div class = "middle" id="middle" style="display:none">
-
+    <div class = "middle" id="middle" >
+        <div id="data-container"></div>
     </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
